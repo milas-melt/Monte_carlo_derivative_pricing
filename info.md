@@ -1,10 +1,10 @@
 # Enrico Biffis recommendations.
-F.A. Longstaff and E.S. Schwartz. Valuing American Options by Simulation: A Simple
+- F.A. Longstaff and E.S. Schwartz. Valuing American Options by Simulation: A Simple
 Least-Squares Approach.
 https://www2.stat.duke.edu/courses/Spring06/sta293.2/lsm.pdf
-• J.N. Tsitsiklis and B. Van Roy. Regression Methods for Pricing Complex American-style
+- J.N. Tsitsiklis and B. Van Roy. Regression Methods for Pricing Complex American-style
 Options. http://web.mit.edu/jnt/www/Papers/J086-01-bvr-options.pdf
-• P. Glasserman. Monte Carlo Methods in Financial Engineering. Springer.
+- P. Glasserman. Monte Carlo Methods in Financial Engineering. Springer.
 
 # "LSMRealOptions" R Studio Package 
 ## link:
