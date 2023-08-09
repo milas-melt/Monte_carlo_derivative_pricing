@@ -1,4 +1,4 @@
-########## Enrico Biffis recommendations. ##########
+# Enrico Biffis recommendations.
 F.A. Longstaff and E.S. Schwartz. Valuing American Options by Simulation: A Simple
 Least-Squares Approach.
 https://www2.stat.duke.edu/courses/Spring06/sta293.2/lsm.pdf
@@ -6,10 +6,10 @@ https://www2.stat.duke.edu/courses/Spring06/sta293.2/lsm.pdf
 Options. http://web.mit.edu/jnt/www/Papers/J086-01-bvr-options.pdf
 • P. Glasserman. Monte Carlo Methods in Financial Engineering. Springer.
 
-########## "LSMRealOptions" R Studio Package ##########
-link:
+# "LSMRealOptions" R Studio Package 
+## link:
 https://cran.r-project.org/web/packages/LSMRealOptions/vignettes/LSMRealOptions.html#:~:text=The%20LSM%20simulation%20method%20approximates,option%20at%20discrete%20observation%20points.
-refs:
+## refs:
 Schwartz, E. S., and J. E. Smith, (2000). Short-Term Variations and Long-Term Dynamics in Commodity Prices. Manage. Sci., 46, 893-911.
 
 Longstaff, F. A., and E. S. Schwartz, (2001). Valuing American options by simulation: a simple least-squares approach. The review of financial studies, 14(1), 113-147.
