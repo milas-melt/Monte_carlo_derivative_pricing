@@ -17,5 +17,5 @@ https://cran.r-project.org/web/packages/LSMRealOptions/vignettes/LSMRealOptions.
 - Aspinall, T., A. Gepp, G. Harris, S. Kelly, C. Southam, and B. Vanstone, (2020). Estimation of a term structure model of carbon prices through state space methods: The European Union emissions trading scheme. Accounting & Finance.
 - Aspinall, T., A. Gepp, G. Harris, S. Kelly, C. Southam, and B. Vanstone, (2020). NFCP: N-Factor Commodity Pricing Through Term Structure Estimation. R package version 0.1.0. https://CRAN.R-project.org/package=NFCP
 
-# Repo code opti of paper by Longstaff and Schwartz on LSMC:
+# Repo *Python* code opti of paper by Longstaff and Schwartz on LSMC:
 https://github.com/elizazhang21/AmericanOptionPricing
