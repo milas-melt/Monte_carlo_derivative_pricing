@@ -3,3 +3,4 @@ Selected some of the monte carlo simulations I like and code them in this repo. 
 In this repo I reproduce simulations from
 - Book: Monte Carlo Methods in Financial Engineering, By Paul Glasserman
 - Research paper: A Simple Least-Squares Approach. By Francis A. Longstaff and Eduardo S. Schwartz
+- Myself: playing around and testing stuff too
