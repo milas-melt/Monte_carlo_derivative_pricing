@@ -21,13 +21,13 @@ https://cran.r-project.org/web/packages/LSMRealOptions/vignettes/LSMRealOptions.
 https://github.com/elizazhang21/AmericanOptionPricing
 
 # Longstaff-Schwartz Algorithm documentation from the conference: PyData Berlin 2019
-https://github.com/luphord/monte-carlo-contracts
-https://longstaff-schwartz.readthedocs.io/en/latest/
-https://www.youtube.com/watch?v=--Il6rgtVjM
+- [https://github.com/luphord/monte-carlo-contracts](https://github.com/luphord/longstaff_schwartz)
+- https://longstaff-schwartz.readthedocs.io/en/latest/
+- https://www.youtube.com/watch?v=--Il6rgtVjM
 
 # Longstaff - Schwartz implementation from chapter 12:Stochastics from the book *Python for Finance*, 2nd Edition by Yves Hilpisch
-https://github.com/yhilpisch/py4fi2nd/blob/master/code/ch12/12_stochastics.ipynb
-https://www.youtube.com/watch?v=hJHQFnWNmhI
+- https://github.com/yhilpisch/py4fi2nd/blob/master/code/ch12/12_stochastics.ipynb
+- https://www.youtube.com/watch?v=hJHQFnWNmhI
 
 # LMU Lectures: Lecture Computational Finance / Numerical Methods 
 ## Lecture 24: American Monte-Carlo, Bermudan Options (1/2):
