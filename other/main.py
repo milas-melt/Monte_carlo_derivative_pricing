@@ -17,35 +17,24 @@ class GeometricBrownianMotion:
         returns: np.array
         """
         dt = np.concatenate((t[0:1], np.diff(t)))
-        # dW = np.random.normal(size=(n, m)) * np.sqrt(dt)
         dW = (np.random.normal(size=(t.size, n)).T * np.sqrt(dt)).T
-        W = np.cumsum(dW, axis=0)
-        return np.exp(self.sigma * W.T + (self.mu - self.sigma**2 / 2) * t).T
+        W = np.cumsum(dW, axis=0) 
+        return np.exp(self.sigma * W.T + (self.mu - self.sigma**2 / 2) * t).T 
 
-    def distribution(self, t):
-        """
-        Return the distribution of the Geometric Brownian Motion at time `t`.
-        t: float
-
-        returns: scipy.stats.lognorm
-        """
-        mu_t = (self.mu - self.sigma**2 / 2) * t
-        sigma_t = self.sigma * np.sqrt(t)
-        return lognorm(scale=np.exp(mu_t), s=sigma_t)
-    
-
-# Model parameters
-t = np.linspace(0, 5, 100)  # timegrid for simulation
-r = 0.01  # riskless rate
-sigma = 0.15  # annual volatility of underlying
-n = 100  # number of simulated paths
+# lonstaff paper setup:
+r = 0.06 # risk free rate
+sigma = 0.2 # annual volatility of underlying
+strike = 40.
+T = 2 # time to maturity
+M = 24 # time steps 
+S0 = 36.0 # initial price
+t = np.linspace(0, T, M+1) # timegrid for simulation
+n = 10**4  # number of simulated paths
 
 # Simulate the underlying
 gbm = GeometricBrownianMotion(mu=r, sigma=sigma)
 x = gbm.simulate(t, n)  # x.shape == (t.size, n)
-
-# Payoff (exercise) function
-strike = 0.95
+x = S0 * x 
 
 def put_payoff(spot):
     return np.maximum(strike - spot, 0.0)
@@ -84,5 +73,6 @@ npv_american = LSMC(x, t, constant_rate_df,
 npv_european = constant_rate_df(t[0], t[-1]) * put_payoff(x[-1]).mean()
 
 # print results
-print(f"npv_american: {npv_american}")
+print(f"npv_american: {npv_american}") 
 print(f"npv_european: {npv_european}")
+print(f"early exercise value: {npv_american - npv_european}")
