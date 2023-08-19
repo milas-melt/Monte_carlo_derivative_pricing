@@ -20,22 +20,22 @@ Learning Least Square Monte Carlo Methods by replicating the research paper: Val
 <img width="690" alt="Screenshot 2023-08-19 at 21 02 26" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/cf7daed3-6182-4697-ac00-070b18cfc952">
 <img width="690" alt="Screenshot 2023-08-19 at 21 02 37" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/f1096119-bbd8-4041-a5d3-04369acd46ab">
 
-## Demo plots for simple american put
-Exercise value computation of the simulated paths for an American put
+## Demo results for simple American put
+### Exercise value computation of the simulated paths for an American put
 <img width="695" alt="Screenshot 2023-08-19 at 21 04 25" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/376d986f-9b91-443b-8d3f-50c1adf6ce19">
 
-Exercise value / Continuation value vs underlying price
+### Exercise value / Continuation value vs underlying price
 <img width="568" alt="Screenshot 2023-08-19 at 21 05 11" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/192ed598-bcb9-43f1-8271-7b45427793fd">
 
-Fitted Exercise value / Continuation value vs underlying price
+### Fitted Exercise value / Continuation value vs underlying price
 <img width="568" alt="Screenshot 2023-08-19 at 21 05 26" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/be83ba7e-3f52-45c6-9254-34593d4c21cd">
 
-Approximation of continuation value at t=today vs t=maturity
+### Approximation of continuation value at t=today vs t=maturity
 <img width="700" alt="Screenshot 2023-08-19 at 21 05 55" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/0e15aefe-3651-4ff7-b929-eb2fa9598c88">
 
-Exercise decision vs time
+### Exercise decision vs time
 <img width="396" alt="Screenshot 2023-08-19 at 21 06 33" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/20fc6df8-fa87-4167-a472-375cdb140568">
 
-Adjusted exercise decision vs time
+### Adjusted exercise decision vs time
 <img width="465" alt="Screenshot 2023-08-19 at 21 06 52" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/10dc925a-2df0-4436-81a8-7e7636326354">
 
