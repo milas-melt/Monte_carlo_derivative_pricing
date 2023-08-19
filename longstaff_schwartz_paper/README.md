@@ -1,145 +1,41 @@
 Learning Least Square Monte Carlo Methods by replicating the research paper: Valuing American Options by Simulation: A Simple Least-Squares Approach. By Francis A. Longstaff and Eduardo S. Schwartz
 
-Quick recap
-# A simple approach to $\mathrm{LSMC}$
+# Before delving into the subject, quick recap of the basics (Monte Carlo)
+## Motivation Monte Carlo
+<img width="465" alt="Screenshot 2023-08-19 at 21 07 52" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/74920ce5-15f7-415e-b2b4-7f748ed56575">
 
-  
+## RNV
+<img width="465" alt="Screenshot 2023-08-19 at 21 09 05" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/7f9e0e05-ceb9-47d7-8ad1-1f9c882f7d24">
+
+## Numerical solution
+<img width="465" alt="Screenshot 2023-08-19 at 21 09 57" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/63f416aa-3f2c-468d-aef3-a934dad2010c">
+
+
+# Quick recap of LMSC
 
 ## Definition:
+<img width="690" alt="Screenshot 2023-08-19 at 21 01 49" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/05d28825-0dd8-44ee-86a3-f8b95d641746">
 
-  
+## Lemma
+<img width="690" alt="Screenshot 2023-08-19 at 21 02 26" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/cf7daed3-6182-4697-ac00-070b18cfc952">
+<img width="690" alt="Screenshot 2023-08-19 at 21 02 37" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/f1096119-bbd8-4041-a5d3-04369acd46ab">
 
-Let $\left(\Omega, F, \mathbb{Q},\left\{\mathcal{F}_{t}\right\}\right)$ be a filtered probability space.
+## Demo plots for simple american put
+Exercise value computation of the simulated paths for an American put
+<img width="695" alt="Screenshot 2023-08-19 at 21 04 25" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/376d986f-9b91-443b-8d3f-50c1adf6ce19">
 
-  
+Exercise value / Continuation value vs underlying price
+<img width="568" alt="Screenshot 2023-08-19 at 21 05 11" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/192ed598-bcb9-43f1-8271-7b45427793fd">
 
-Let $V$ be an $F_{T 1}$ - measurable random voriable defined as the conditional expectation of $U$ :
+Fitted Exercise value / Continuation value vs underlying price
+<img width="568" alt="Screenshot 2023-08-19 at 21 05 26" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/be83ba7e-3f52-45c6-9254-34593d4c21cd">
 
-  
+Approximation of continuation value at t=today vs t=maturity
+<img width="700" alt="Screenshot 2023-08-19 at 21 05 55" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/0e15aefe-3651-4ff7-b929-eb2fa9598c88">
 
-$$
-V=E^{\mathbb{Q}}\left(U \mid  \mathcal{F}_{T 1}\right)
-$$
+Exercise decision vs time
+<img width="396" alt="Screenshot 2023-08-19 at 21 06 33" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/20fc6df8-fa87-4167-a472-375cdb140568">
 
-  
+Adjusted exercise decision vs time
+<img width="465" alt="Screenshot 2023-08-19 at 21 06 52" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/10dc925a-2df0-4436-81a8-7e7636326354">
 
-where $U$ is at least $\mathcal{F}$-measurable.
-
-  
-
-Let $Y:=\left(Y_{1}, \ldots, Y_{p}\right)$ be a given $\mathcal{F}_{T 1}$-measurable random variable.
-
-  
-
-Let $f: \mathbb{R}^{p} \times  \mathbb{R}^{q}$ be a given function.
-
-  
-
-Let $\Omega^{*}=\left\{\omega_{1}, \ldots, w_{m}\right\}$ be a drawing from $\Omega$ (e.g., Monte Carlo simulation for $\mathbb{Q}$ ) Let $\alpha^{*}:=\left(\alpha_{1}, \ldots, \alpha_{\mathrm{q}}\right)$ such that
-
-  
-
-$$
-\left\|U-f\left(Y, \alpha^{*}\right)\right\|_{L 2\left(\Omega^{*}\right)}=\min _{\alpha}\|U-f(Y, \alpha)\|_{L 2\left(\Omega^{*}\right)}
-$$
-
-  
-
-Where $\left\|U-f\left(Y, \alpha^{*}\right)\right\|_{L 2\left(\Omega^{*}\right)}^{2}=\sum_{j=1}^{m}\left(U\left(\omega_{j}\right)-f\left(Y\left(\omega_{j}\right), \alpha^{*}\right)\right)^{2}$
-
-  
-
-We set $V^{L S}:=f\left(Y, \alpha^{*}\right)$
-
-  
-
-The random variable $V^{L S}$ is $\mathcal{F}_{T 1}-$ measurable. It is defined over $\Omega$ and a least square approximation of $V$ on $\Omega^{*}$.
-
-  
-
-Following the instructions on Longstaff and Schwartz paper, the function $f$ is chosen under the condition $q=p$ such that
-
-  
-
-## Lemma: Linear regression
-
-  
-
-$$
-f\left(y_{1}, \ldots, y_{p}, \alpha_{1}, \ldots, \alpha_{q}\right):=\sum_{i=1}^{p} \alpha_{i} y_{i}
-$$
-
-  
-
-Let $\Omega^{*}=\left\{w_{1}, \ldots, w_{m}\right\}$ be a given sample space.
-
-  
-
-Let $V: \Omega^{*} \rightarrow  \mathbb{R}$ and $Y:=\left(Y_{1}, \ldots, Y_{p}\right): \Omega^{*} \rightarrow  \mathbb{R}^{p}$ be a given random variables.
-
-  
-
-$$
-f\left(y_{1}, \ldots, y_{p}, \alpha_{1}, \ldots, \alpha_{q}\right):=\sum  \alpha_{i} y_{i}
-$$
-
-  
-
-$\forall  \alpha^{*}$ with $X^{\top} X \alpha^{*}=X^{\top} v$
-
-  
-
-$$
-\begin{gathered}
-\left\|V-f\left(Y, \alpha^{*}\right)\right\|_{L 2\left(\Omega^{*}\right)}=\min \|V-f(Y, \alpha)\|_{L 2(\Omega)}^{*} \\
-X:=\left(\begin{array}{ccc}
-Y_{1}(\omega) & \ldots & Y_{p}\left(\omega_{1}\right) \\
-\vdots & & \vdots \\
-Y_{1}\left(\omega_{m}\right) & \ldots & Y_{p}\left(\omega_{m}\right)
-\end{array}\right), v:=\left(\begin{array}{c}
-V\left(\omega_{1}\right) \\
-\vdots \\
-V\left(\omega_{m}\right)
-\end{array}\right)
-\end{gathered}
-$$
-
-  
-
-${ }^{1}$ From LMU lectures available in the references if $\left(X^{\top} X\right)^{-1}$ exists, then $\alpha^{*}:=\left(X^{\top} X\right)^{-1} X^{\top} v$
-
-  
-
-## Proof of Lemma:
-
-  
-
-$$
-\begin{aligned}
-& \|V-f(Y, \alpha)\|_{L_{2}}^{2}=\langle V-X \cdot  \alpha, V-X \cdot  \alpha\rangle \\
-& =V^{\top} V-2  \alpha^{\top} X^{\top} V+\alpha^{\top} X^{\top} \alpha
-\end{aligned}
-$$
-
-  
-
-Now we differentiate and set to 0
-
-  
-
-$$
-\begin{gathered}
--2 X^{\top} V+2 X^{\top} X \alpha=0 \\
-X^{\top} V+X^{\top} X \alpha=0
-\end{gathered}
-$$
-
-  
-
-Then we recover $\alpha^{*}$ as stated in the lemma.
-
-  
-
-$$
-\alpha^{\top}=\left(X^{\top} X\right)^{-1} X^{\top} v
-$$
