@@ -1,65 +1,145 @@
 Learning Least Square Monte Carlo Methods by replicating the research paper: Valuing American Options by Simulation: A Simple Least-Squares Approach. By Francis A. Longstaff and Eduardo S. Schwartz
 
-Quick recap here:
-**Definition:**
+Quick recap
+# A simple approach to $\mathrm{LSMC}$
 
-Let Ω,F,Q,Ft be a filtered probability space.
+  
 
-Let V be an FT1 - measurable random voriable defined as the conditional expectation of U:
+## Definition:
 
-V=EQU∣FT1. 
+  
 
-where U is at least F-measurable.
+Let $\left(\Omega, F, \mathbb{Q},\left\{\mathcal{F}_{t}\right\}\right)$ be a filtered probability space.
 
-Let Y:=Y1,…,Yp be a given FT1-measurable random variable.
+  
 
-Let f:Rp×Rq be a given function.
+Let $V$ be an $F_{T 1}$ - measurable random voriable defined as the conditional expectation of $U$ :
 
-Let Ω\*=ω1,…,wm be a drawing from Ω (e.g., Monte Carlo simulation for Q)
+  
 
-Let α\*:=(α1, …, αq) such that
+$$
+V=E^{\mathbb{Q}}\left(U \mid  \mathcal{F}_{T 1}\right)
+$$
 
-U-fY,α\*L2(Ω\*)=minαU-fY,αL2(Ω\*)
+  
 
-Where U-fY,α\*2L2Ω\*=j=1mUωj-fYωj, α\*2
+where $U$ is at least $\mathcal{F}$-measurable.
 
-We set VLS:=f(Y, α\*)
+  
 
-The random variable VLS is FT1-measurable. It is defined over Ω and a least square approximation of V on Ω\*.
+Let $Y:=\left(Y_{1}, \ldots, Y_{p}\right)$ be a given $\mathcal{F}_{T 1}$-measurable random variable.
 
+  
 
+Let $f: \mathbb{R}^{p} \times  \mathbb{R}^{q}$ be a given function.
 
-Following the instructions on Longstaff and Schwartz paper, the function f is chosen under the condition q=p such that
+  
 
-fy1,…,yp, α1,…,αq≔ i=1pαiyi
+Let $\Omega^{*}=\left\{\omega_{1}, \ldots, w_{m}\right\}$ be a drawing from $\Omega$ (e.g., Monte Carlo simulation for $\mathbb{Q}$ ) Let $\alpha^{*}:=\left(\alpha_{1}, \ldots, \alpha_{\mathrm{q}}\right)$ such that
 
-**Lemma: Linear regression**
+  
 
+$$
+\left\|U-f\left(Y, \alpha^{*}\right)\right\|_{L 2\left(\Omega^{*}\right)}=\min _{\alpha}\|U-f(Y, \alpha)\|_{L 2\left(\Omega^{*}\right)}
+$$
 
-Let Ω\*=w1,…,wm be a given sample space.
+  
 
+Where $\left\|U-f\left(Y, \alpha^{*}\right)\right\|_{L 2\left(\Omega^{*}\right)}^{2}=\sum_{j=1}^{m}\left(U\left(\omega_{j}\right)-f\left(Y\left(\omega_{j}\right), \alpha^{*}\right)\right)^{2}$
 
-Let V:Ω\*→R and Y:=Y1,…,Yp:Ω\*→Rp be a given random variables.
+  
 
-fy1,…,yp,α1,…,αq:= αiyi
+We set $V^{L S}:=f\left(Y, \alpha^{*}\right)$
 
-∀α\* with X⊤Xα\*=X⊤v
+  
 
-V-fY,α\*L2Ω\*=min∥V-f(Y,α)∥L2(Ω)\*
+The random variable $V^{L S}$ is $\mathcal{F}_{T 1}-$ measurable. It is defined over $\Omega$ and a least square approximation of $V$ on $\Omega^{*}$.
 
-` `X:=Y1(ω)…Ypω1⋮⋮Y1ωm…Ypωm,v:=Vω1⋮Vωm
+  
 
+Following the instructions on Longstaff and Schwartz paper, the function $f$ is chosen under the condition $q=p$ such that
 
-if X⊤X-1 exists, then α\*:=X⊤X-1X⊤v
+  
 
-**Proof of Lemma:**
+## Lemma: Linear regression
 
-` `∥V-f(Y,α)∥L22=⟨V-X⋅α,V-X⋅α⟩ =V⊤V-2α⊤X⊤V+α⊤X⊤α
+  
+
+$$
+f\left(y_{1}, \ldots, y_{p}, \alpha_{1}, \ldots, \alpha_{q}\right):=\sum_{i=1}^{p} \alpha_{i} y_{i}
+$$
+
+  
+
+Let $\Omega^{*}=\left\{w_{1}, \ldots, w_{m}\right\}$ be a given sample space.
+
+  
+
+Let $V: \Omega^{*} \rightarrow  \mathbb{R}$ and $Y:=\left(Y_{1}, \ldots, Y_{p}\right): \Omega^{*} \rightarrow  \mathbb{R}^{p}$ be a given random variables.
+
+  
+
+$$
+f\left(y_{1}, \ldots, y_{p}, \alpha_{1}, \ldots, \alpha_{q}\right):=\sum  \alpha_{i} y_{i}
+$$
+
+  
+
+$\forall  \alpha^{*}$ with $X^{\top} X \alpha^{*}=X^{\top} v$
+
+  
+
+$$
+\begin{gathered}
+\left\|V-f\left(Y, \alpha^{*}\right)\right\|_{L 2\left(\Omega^{*}\right)}=\min \|V-f(Y, \alpha)\|_{L 2(\Omega)}^{*} \\
+X:=\left(\begin{array}{ccc}
+Y_{1}(\omega) & \ldots & Y_{p}\left(\omega_{1}\right) \\
+\vdots & & \vdots \\
+Y_{1}\left(\omega_{m}\right) & \ldots & Y_{p}\left(\omega_{m}\right)
+\end{array}\right), v:=\left(\begin{array}{c}
+V\left(\omega_{1}\right) \\
+\vdots \\
+V\left(\omega_{m}\right)
+\end{array}\right)
+\end{gathered}
+$$
+
+  
+
+${ }^{1}$ From LMU lectures available in the references if $\left(X^{\top} X\right)^{-1}$ exists, then $\alpha^{*}:=\left(X^{\top} X\right)^{-1} X^{\top} v$
+
+  
+
+## Proof of Lemma:
+
+  
+
+$$
+\begin{aligned}
+& \|V-f(Y, \alpha)\|_{L_{2}}^{2}=\langle V-X \cdot  \alpha, V-X \cdot  \alpha\rangle \\
+& =V^{\top} V-2  \alpha^{\top} X^{\top} V+\alpha^{\top} X^{\top} \alpha
+\end{aligned}
+$$
+
+  
 
 Now we differentiate and set to 0
 
--2X⊤V+2X⊤Xα=0X⊤V+X⊤Xα=0
+  
 
-Then we recover α\* as stated in the lemma.
+$$
+\begin{gathered}
+-2 X^{\top} V+2 X^{\top} X \alpha=0 \\
+X^{\top} V+X^{\top} X \alpha=0
+\end{gathered}
+$$
 
-α⊤=X⊤X-1X⊤v
+  
+
+Then we recover $\alpha^{*}$ as stated in the lemma.
+
+  
+
+$$
+\alpha^{\top}=\left(X^{\top} X\right)^{-1} X^{\top} v
+$$
