@@ -13,6 +13,13 @@ Learning Least Square Monte Carlo Methods by replicating the research paper: Val
 
 # Quick recap of LMSC
 
+We use Longstaff & Schwartz notations and setup. Screenshots from Chapter 2 of the paper:
+<img width="483" alt="Screenshot 2023-08-24 at 12 25 50" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/1b28df7c-9432-4fc3-8e29-0c39549737ff">
+
+<img width="470" alt="Screenshot 2023-08-24 at 12 25 11" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/adcbddfc-5f85-4853-84a5-f0afd2c03770">
+<img width="470" alt="Screenshot 2023-08-24 at 12 25 30" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/2b8fdc9b-1410-40c2-aaff-06615cf46a9f">
+
+
 ## Definition:
 <img width="690" alt="Screenshot 2023-08-19 at 21 01 49" src="https://github.com/milas-melt/Monte_carlo_derivative_pricing/assets/55765976/05d28825-0dd8-44ee-86a3-f8b95d641746">
 
